@@ -1,0 +1,358 @@
+html {
+    --fs: 1rem;
+    --margine-pagina: 120px;
+    --grid-gap: 40px;
+    --padding-zona-text: 16px;
+    font-size: var(--fs);
+    transition: --fs 1s linear;
+}
+
+body {
+    /* Stiluri pentru MathML */
+    math mi {
+        color: #0077cc;
+        font-style: italic;
+        font-size: 1.2em;
+    }
+    math mo {
+        color: #e74c3c;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    math mn {
+        color: #27ae60;
+        font-size: 1em;
+    }
+    math msup mi {
+        color: #ff9900;
+        font-weight: bold;
+    }
+    math mtext {
+        color: #555;
+        font-size: 0.95em;
+    }
+    /* Dimensiune fixă pentru siglă */
+    .sigla {
+        width: 120px !important;
+        height: 120px !important;
+        max-width: 120px !important;
+        min-width: 120px !important;
+        max-height: 120px !important;
+        min-height: 120px !important;
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    /* Elemente media responsive */
+    img, video, iframe, .media-responsive {
+        width: 100%;
+        max-width: 700px;
+        min-width: 200px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    --culoare-fundal: #CAF2FA;
+    --culoare-contur: #82BDF5;
+    --culoare-text-important: #8299F5;
+    --culoare-alternativa-fundal: #82F5E2;
+    --culoare-highlight: #82F5BB;
+    background-color: var(--culoare-fundal);
+    padding-left: var(--margine-pagina);
+    padding-right: var(--margine-pagina);
+    font-family: 'Poppins', sans-serif;
+
+
+}
+header {
+    background-color: var(--culoare-alternativa-fundal); /* culoare din schema ta */
+    padding: var(--padding-zona-text);
+    border-bottom: 3px solid var(--culoare-highlight);
+    box-shadow: 0 4px 10px ;
+}
+footer {
+    background-color: var(--culoare-alternativa-fundal);
+    padding: var(--padding-zona-text);
+    border-top: 3px solid var(--culoare-highlight);
+    box-shadow: 0 -4px 10px ;
+}
+
+#grid-pagina-principala>* {
+    border: 1px solid var(--culoare-contur);
+    box-shadow: 0px 0px 5px var(--culoare-contur);
+    padding: var(--padding-zona-text);
+}
+
+#grid-pagina-principala {
+    display: grid;
+    gap: var(--grid-gap);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: "welcome welcome welcome welcome"
+        "lista-utilizatori-online date-utilizatori-statistici date-utilizatori-statistici date-site-server"
+        "calendar-evenimente calendar-evenimente planificare planificare"
+        "anunturi anunturi planificare planificare"
+        "anatomie-examen anatomie-examen anatomie-examen motto"
+        "anatomie-examen anatomie-examen anatomie-examen informatii-utile"
+        "start-invatat start-invatat start-invatat start-invatat"
+    ;
+}
+
+
+
+#welcome {
+    grid-area: welcome;
+}
+
+#calendar-evenimente {
+    grid-area: calendar-evenimente;
+}
+
+#anunturi {
+    grid-area: anunturi;
+}
+
+#lista-utilizatori-online {
+    grid-area: lista-utilizatori-online;
+}
+
+#calendar-evenimente {
+    grid-area: calendar-evenimente;
+}
+
+#date-utilizatori-statistici {
+    grid-area: date-utilizatori-statistici;
+}
+
+#date-site-server {
+    grid-area: date-site-server;
+}
+
+/* #tabel-planificare{
+    grid-area: tabel-planificare;
+} */
+
+#motto {
+    grid-area: motto;
+}
+
+#anatomie-examen {
+    grid-area: anatomie-examen;
+}
+
+#start-invatat {
+    grid-area: start-invatat;
+}
+
+#informatii-utile {
+    grid-area: informatii-utile;
+}
+
+#planificare {
+    grid-area: planificare;
+}
+
+.container-iframe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 315px;
+    width: 600px;
+}
+
+.taburi-iframe {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* height: 100%; */
+    justify-content: flex-end;
+    border: 1px solid var(--culoare-contur);
+
+}
+
+.taburi-iframe>a {
+    display: inline-block;
+    padding: var(--padding-zona-text);
+    background-color: var(--culoare-fundal);
+    border: 1px solid var(--culoare-contur);
+    color: black;
+    text-decoration: none;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    /* margin-right: 10px; */
+    transition: all 1s linear;
+}
+
+.taburi-iframe>a:hover {
+    background-color: var(--culoare-contur);
+    color: white;
+}
+
+#tabel-planificare caption {
+    caption-side: bottom;
+    padding-top: var(--padding-zona-text);
+    font-weight: bold;
+}
+
+#tabel-planificare {
+    border: 5px inset var(--culoare-contur); /* culoare la alegere */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#tabel-planificare th, #tabel-planificare td {
+    border: 1px solid var(--culoare-contur); /* baza, va fi suprascrisă la rânduri */
+    padding: var(--padding-zona-text);
+}
+
+
+/* Bordere alternative între rânduri */
+#tabel-planificare tbody tr:not(:first-child) td {
+    border-top-width: 1px;
+}
+#tabel-planificare tbody tr:nth-child(even):not(:first-child) td {
+    border-top: 1px solid var(--culoare-contur);
+}
+#tabel-planificare tbody tr:nth-child(odd):not(:first-child) td {
+    border-top: 1px solid var(--culoare-text-important); /* c2 */
+}
+
+tbody tr {
+    transition: outline 0.5s ease;
+}
+
+tbody tr:hover {
+    outline: 5px solid rgba(130, 189, 245, 0.7);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* sau left: 20px; */
+    width: 60px;
+    height: 60px;
+    background-color: var(--culoare-alternativa-fundal); /* semi-transparent */
+    border-color: var(--culoare-contur);
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    text-decoration: none;
+    transition: background-color 0.4s ease, opacity 0.4s ease;
+    opacity: 0.6;
+    transform: rotate(45deg);
+}
+
+.back-to-top:hover {
+    background-color: var(--culoare-alternativa-fundal);
+    border-color: var(--culoare-contur);
+    opacity: 1;
+}
+
+.back-to-top .arrow {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid #ffffff; /* culoarea săgeții */
+    transition: border-bottom-color 0.4s ease;
+    border-bottom-left-radius: 500px;
+    border-bottom-right-radius: 500px;
+}
+
+.back-to-top:hover .arrow {
+    border-bottom-color: #ffcc00; /* culoare la alegere */
+}
+
+.back-to-top .arrow {
+    transform: rotate(-45deg);
+}
+
+.back-to-top .tooltip {
+    position: absolute;
+    bottom: 70px;
+    right: 70%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: var(--padding-zona-text);
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    white-space: nowrap;
+    transform: rotate(-45deg);
+}
+
+.back-to-top:hover .tooltip {
+    opacity: 1;
+}
+
+
+
+
+@media screen and (max-width:1200px) {
+        img, video, iframe, .media-responsive {
+            max-width: 500px;
+            min-width: 120px;
+        }
+    html {
+        --fs: 0.9rem;
+        --margine-pagina: 90px;
+        --grid-gap: 25px;
+    }
+
+    /* body{
+        --margine-pagina:80px;
+    } */
+
+    #grid-pagina-principala {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "welcome welcome"
+            "lista-utilizatori-online date-site-server"
+            "date-utilizatori-statistici date-utilizatori-statistici"
+            "calendar-evenimente calendar-evenimente"
+            "anunturi anunturi"
+            "planificare planificare"
+            "motto motto"
+            "anatomie-examen anatomie-examen"
+            "anatomie-examen anatomie-examen"
+            "informatii-utile informatii-utile"
+            "start-invatat start-invatat";
+    }
+}
+
+@media screen and (max-width:700px) {
+    img, video, iframe, .media-responsive {
+        max-width: 100vw;
+        min-width: 60px;
+    }
+
+    html {
+        --fs: 0.8rem;
+        --margine-pagina: 50px;
+        --grid-gap: 15px;
+    }
+
+    /* body{
+        --margine-pagina:50px;
+    } */
+
+
+    #grid-pagina-principala {
+
+        display: block;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+}

@@ -1,0 +1,107 @@
+/* Reset CSS inspirat din Meyerweb + variabile pentru spațieri, dimensiuni, culori */
+
+:root {
+    --spatiere: 1em;
+    --spatiere-mica: 0.5em;
+    --spatiere-mare: 2em;
+    --culoare-text: #222;
+    --culoare-fundal: #fff;
+    --culoare-accent: #82BDF5;
+    --dimensiune-baza: 1rem;
+    --dimensiune-mica: 0.8rem;
+    --dimensiune-mare: 1.2rem;
+    --border-radius: 0.5em;
+    --border-color: #ccc;
+}
+
+/* Meyer reset (adaptat) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    background: var(--culoare-fundal);
+    color: var(--culoare-text);
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Stiluri pentru text */
+b, strong {
+    font-weight: bold;
+}
+i, em {
+    font-style: italic;
+}
+
+/* Spațiere și dimensiuni relative */
+p, ul, ol, li, table, th, td, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spatiere);
+    font-size: var(--dimensiune-baza);
+}
+
+ul, ol {
+    padding-left: var(--spatiere-mare);
+}
+
+li {
+    margin-left: var(--spatiere-mica);
+}
+
+/* Bulleturi și indici de listă */
+ul {
+    list-style-type: disc;
+}
+ol {
+    list-style-type: decimal;
+}
+
+/* Tabele */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: var(--spatiere);
+}
+th, td {
+    border: 1px solid var(--border-color);
+    padding: var(--spatiere-mica);
+    font-size: var(--dimensiune-baza);
+}
+caption {
+    font-size: var(--dimensiune-mica);
+    margin-bottom: var(--spatiere-mica);
+}
+
+/* Alte elemente */
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--spatiere-mare) 0;
+}
