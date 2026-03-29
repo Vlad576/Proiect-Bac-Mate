@@ -18,6 +18,10 @@
     <link rel="manifest" href="./resurse/ico/favicon/site.webmanifest" />
 
     <link rel="stylesheet" href="./resurse/css/general.css" type="text/css">
+    <link rel="stylesheet" href="./resurse/css/nav.css" type="text/css" />
+    <link rel="stylesheet" href="./resurse/css/nav1000.css" type="text/css" media="screen and (max-width: 1000px)" />
+    <link rel="stylesheet" href="./resurse/css/nav700.css" type="text/css" media="screen and (max-width: 700px)" />
+    <link rel="stylesheet" href="./resurse/css/print.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 
 
@@ -30,15 +34,39 @@
         <h1>Bacul la Mate Ușor și Logic! <i class="fa-solid fa-gears fa-beat"></i></h1>
         <img src="./resurse/imagini/sigla.jpg" alt="sigla" width="150" class="sigla"/>
         <nav>
-            <ul>
-                <li><a href="#welcome">Cel mai bun mod de a învăța pentru BAC</a>
+            <label id="hamburger" for="ch-menu">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+        <input type="checkbox" id="ch-menu"/>
+            <ul class="meniu">
+                <li><a href="#welcome"><i class="fa-solid fa-graduation-cap"></i> <span class="text-icon text-icon-welcome">Cel mai bun mod de a învăța pentru BAC</span></a>
                     <ul>
                         <li><a href="#problema-zilei">Secretul nostru</a></li>
                         <li><a href="#welcome-secretul-nostru">Secretul nostru</a></li>
                     </ul>
                 </li>
-                <li><a href="#motto">Motto-ul nostru</a></li>
-                <li><a href="#anatomie-examen">Anatomia unui subiect de examen</a>
+                <li><i class="fa-solid fa-file-pen"></i> <span class="text-icon">Subiectul de bac 2025</span>
+                    <ul>
+                        <li>Mate-info</li>
+                        <li>Științe ale naturii</li>
+                        <li>Tehnologic</li>
+                        <li>Pedagogic</li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-person-cane"></i> <span class="text-icon">Subiecte date în anii trecuți</span>
+                    <ul>
+                        <li>Subiecte de bac 2024</li>
+                        <li>Subiecte de bac 2023</li>
+                        <li>Subiecte de bac 2022</li>
+                        <li>Subiecte de bac 2021</li>
+                    </ul>
+                </li>
+                <li><a href="#motto"><i class="fa-solid fa-brain"></i> <span class="text-icon">Motto-ul nostru</span></a></li>
+                <li><a href="#anatomie-examen"><i class="fa-solid fa-bone"></i> <span class="text-icon">Anatomia unui subiect de examen</span></a>
                     <ul>
                         <li><a href="#anatomie-sub1">Subiectul I</a>
                             <ul>
@@ -65,25 +93,25 @@
                         <li><a href="#anatomie-secretul-nostru">Secretul nostru</a></li>
                     </ul>
                 </li>
-                <li><a href="#start-invatat">Cum să te apuci de învățat</a>
+                <li><a href="#start-invatat"><i class="fa-solid fa-play"></i> <span class="text-icon">Cum să te apuci de învățat</span></a>
                     <ul>
                         <li><a href="#start-invatat-secretul-nostru">Secretul nostru</a></li>
                     </ul>
                 </li>
-                <li><a href="#informatii-utile">Informații utile</a>
+                <li><a href="#informatii-utile"><i class="fa-solid fa-info"></i> <span class="text-icon">Informații utile</span></a>
                     <ul>
                         <li><a href="#judete-elevi-performanti">Din ce județe sunt cei mai performanți elevi de liceu ai
                                 României?</a></li>
                         <li><a href="#videoclipuri-informative">Mai multe videoclipuri informative</a></li>
                     </ul>
                 </li>
-                <li><a href="#planificare">Webinarii gratuite</a>
+                <li><a href="#planificare"><i class="fa-solid fa-earth-americas"></i> <span class="text-icon">Webinarii gratuite</span></a>
                     <ul>
                         <li><a href="#evenimente-pregatire">Evenimente pentru pregătirea BAC</a></li>
                         <li><a href="#planificare-secretul-nostru">Secretul nostru</a></li>
                     </ul>
                 </li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-phone"></i> <span class="text-icon">Contact</span></a></li>
             </ul>
         </nav>
     </header>
@@ -444,7 +472,7 @@
                     <h3>Din ce județe sunt cei mai performanți elevi de liceu ai României?</h3>
                     <a href="./resurse/imagini/media-10-bac-2025-inainte-de-contestatii-.jpg">
                         <img src="./resurse/imagini/media-10-bac-2025-inainte-de-contestatii-.jpg" alt="Sigla"
-                            width="500">
+                            width="100%">
                     </a>
                     <p><a href="./resurse/imagini/media-10-bac-2025-inainte-de-contestatii-.jpg"
                             download="cei_mai_misto_elevi.jpg">
@@ -676,6 +704,7 @@
                 <time datetime="2026-03-08">8 martie 2026</time>.
             </small>
         </div>
+        <p id="banner" class="banner-print">Acesta este un proiect școlar!</p>
         <a href="#top">Înapoi la începutul paginii</a>
     </footer>
      <a href="#top" class="back-to-top">

@@ -1,0 +1,133 @@
+@media print {
+  @page :left {
+    margin-left: 2cm;
+    margin-right: 1cm;
+  }
+  @page :right {
+    margin-left: 1cm;
+    margin-right: 2cm;
+  }
+}
+@media print {
+  
+  /* Bannerul din footer: dreapta sus, border dublu, doar prima pagină */
+  footer p.banner-print {
+    position: fixed;
+    top: 0.5cm;
+    right: 0.5cm;
+    width: 50vw;
+    max-width: 50vw;
+    min-width: 200px;
+    border: 4px double black;
+    background: white;
+    color: black;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    text-align: right;
+    z-index: 1000;
+    box-sizing: border-box;
+    page-break-before: avoid;
+    page-break-after: avoid;
+  }
+  
+  /* Ascunde elemente media și descrieri asociate */
+  img, video, iframe, .media-responsive, embed,
+  figcaption, .descriere, .caption, .media-caption, .container-iframe {
+    display: none !important;
+  }
+
+  /* Ascunde linkul către începutul paginii */
+  a[href="#top"], .back-to-top {
+    display: none !important;
+  }
+
+  /* Gridul paginii ca block pentru print */
+  #grid-pagina-principala {
+    display: block !important;
+  }
+
+  /* Linkurile ca text normal la print */
+  a, a:visited, a:active, a:link {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+    background: none !important;
+    cursor: default !important;
+  }
+
+  /* Headingul de nivel 1 centrat pe prima pagină */
+  h1 {
+    text-align: center !important;
+    margin-top: 1.5em !important;
+    margin-bottom: 1em !important;
+    page-break-before: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Meniul ca listă verticală la print */
+  nav, .meniu {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    margin: 0 auto 1em auto !important;
+    padding: 0 !important;
+    text-align: left !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    background: none !important;
+    box-shadow: none !important;
+  }
+  ul.meniu, nav ul.meniu {
+    display: block !important;
+    list-style-type: disc !important;
+    margin: 0 0 1em 2em !important;
+    padding: 0 !important;
+  }
+  ul.meniu li {
+    display: list-item !important;
+    width: auto !important;
+    margin: 0 0 0.5em 0 !important;
+    border: none !important;
+    background: none !important;
+    color: inherit !important;
+    text-align: left !important;
+    white-space: normal !important;
+  }
+  ul.meniu ul {
+    margin-left: 2em !important;
+    list-style-type: circle !important;
+  }
+
+  /* Page break după meniu */
+  nav, .meniu {
+    page-break-after: always;
+  }
+
+  /* Page break înainte de footer */
+  footer {
+    page-break-before: always;
+  }
+
+  /* Watermark pe fiecare pagină la print */
+  body::after {
+    content: "Dicu\A Vlad";
+    white-space: pre;
+    position: fixed;
+    top: 45vh;
+    left: 20vw;
+    width: 60vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3vw;
+    font-family: inherit;
+    color: rgba(0,0,0,0.3);
+    text-align: center;
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+    background: none;
+  }
+}

@@ -1,0 +1,129 @@
+// Placeholder pentru buton meniu
+%buton-meniu {
+    cursor: pointer;
+    width: $latime-buton;
+    height: auto;
+    background-color: $culoare-fundal;
+    border: $grosime-bordura solid $culoare-contur;
+    color: black;
+    text-align: center;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+    transition: all 1s linear;
+    position: relative;
+}
+// Variabile SASS pentru valori repetitive
+$culoare-contur: #222;
+$culoare-fundal: #fff;
+$culoare-hover: #222;
+$culoare-hover-text: #fff;
+$latime-buton: 120px;
+$inaltime-buton: 30px;
+$grosime-bordura: 1px;
+$grosime-bar: 4px;
+$spatiu-bar: 8px;
+
+ul.meniu {
+    display: flex;
+    position: relative;
+
+    ul {
+        display: none;
+        animation: animatie_submeniu 1s linear;
+        transform-origin: center top;
+
+        li:hover > ul {
+            display: block;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            z-index: 10;
+        }
+    }
+
+    > li {
+        @extend %buton-meniu;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: -#{$spatiu-bar};
+            right: -#{$spatiu-bar};
+            bottom: 0;
+            height: $grosime-bar;
+            border-bottom: $grosime-bar solid transparent;
+            z-index: 0;
+            pointer-events: none;
+            clip-path: inset(0 8px 0 8px);
+            opacity: 0;
+            transform: translateX(40%);
+            transition: opacity 0.3s, transform 0.4s cubic-bezier(.4,0,.2,1);
+        }
+
+        &:hover {
+            ul {
+                display: block;
+                position: absolute;
+                z-index: 10;
+            }
+            &::before {
+                border-image: linear-gradient(to right, black, white) 1;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        width: 100%;
+        height: 100%;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    li:hover {
+        background-color: $culoare-hover;
+        color: $culoare-hover-text;
+    }
+}
+
+nav {
+    --latime-buton: #{$latime-buton};
+    --inaltime-buton: #{$inaltime-buton};
+    background-color: $culoare-contur;
+}
+
+
+ul.meniu, ul.meniu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+#hamburger, #ch-menu {
+    display: none;
+}
+
+
+.text-icon, .imag-icon {
+    display: inline-block;
+}
+
+@keyframes animatie_submeniu {
+    0%{
+        opacity: 0;
+        transform: scale(0,0);
+    }
+    50%{
+        transform: scale(0.5,1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1,1);
+    }
+}
